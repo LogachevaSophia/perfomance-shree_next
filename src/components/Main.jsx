@@ -9,7 +9,11 @@ export const Main = () =>  {
     const initedRef = useRef(false);
     const [activeTab, setActiveTab] = useState('');
     const [hasRightScroll, setHasRightScroll] = useState(false);
-    const [sizes, setSizes] = useState([]);
+    
+    let sizes = [];
+    const onSize = size => {
+        sizes = [...sizes, size];
+    };
 
     useEffect(() => {
         if (!activeTab && !initedRef.current) {
@@ -22,19 +26,16 @@ export const Main = () =>  {
         setActiveTab(event.target.value);
     };
 
-    const onSize = size => {
-        setSizes(prevSizes => [...prevSizes, size]);
-    };
 
     useEffect(() => {
-        if (ref.current) {
-            const sumWidth = sizes.reduce((acc, item) => acc + item.width, 0);
-            const newHasRightScroll = sumWidth > ref.current.offsetWidth;
-            if (newHasRightScroll !== hasRightScroll) {
-                setHasRightScroll(newHasRightScroll);
-            }
+        const sumWidth = sizes.reduce((acc, item) => acc + item.width, 0);
+    //    const sumHeight = sizes.reduce((acc, item) => acc + item.height, 0);
+
+        const newHasRightScroll = sumWidth > ref.current.offsetWidth;
+        if (newHasRightScroll !== hasRightScroll) {
+            setHasRightScroll(newHasRightScroll);
         }
-    }, [sizes, hasRightScroll]);
+    }, [sizes]);
 
     const onArrowCLick = () => {
         const scroller = ref.current.querySelector('.section__panel:not(.section__panel_hidden)');
