@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" viewBox="0 0 9 14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>Icons / Arrow Right / M Copy@2x</title>
-<desc>Created with Sketch.</desc>
-<defs>
-<path id="d" d="m7.5 11.727c-0.38627 0-0.6235-0.15457-0.93525-0.48711l-5.387-5.7461c-0.32035-0.34171-0.32035-0.89573 0-1.2374 0.32035-0.34171 0.83975-0.34171 1.1601 0l5.1621 5.5063 5.1621-5.5063c0.32035-0.34171 0.83975-0.34171 1.1601 0s0.32035 0.89573 0 1.2374c0 0-3.5785 3.8171-5.3678 5.7257-0.31814 0.33935-0.56815 0.50755-0.95442 0.50755z"/>
-</defs>
-<g fill="none" fill-rule="evenodd">
-<g transform="translate(-1283 -608)">
-<rect width="1366" height="829" fill="#none"/>
-<g transform="translate(40 595)">
-<g transform="translate(1247.5 20) scale(-1 1) translate(-7.5 -8)">
-<rect width="15" height="16"/>
-<mask id="c" fill="white">
-<use xlink:href="#d"/>
-</mask>
-<g fill="#333" mask="url(#c)">
-<g transform="translate(-76.875 -57)">
-<polygon points="0 0 169 0 169 130 0 130"/>
-</g>
-</g>
-</g>
-</g>
-</g>
-</g>
+<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_list_m</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,3.32630157 C0,2.77790036 0.444630861,2.33333333 1.00087166,2.33333333 L14.9991283,2.33333333 C15.5518945,2.33333333 16,2.7736791 16,3.32630157 L16,4.00703176 C16,4.55543298 15.5553691,5 14.9991283,5 L1.00087166,5 C0.448105505,5 0,4.55965424 0,4.00703176 L0,3.32630157 Z M0,8.65963491 C0,8.11123369 0.444630861,7.66666667 1.00087166,7.66666667 L14.9991283,7.66666667 C15.5518945,7.66666667 16,8.10701243 16,8.65963491 L16,9.34036509 C16,9.88876631 15.5553691,10.3333333 14.9991283,10.3333333 L1.00087166,10.3333333 C0.448105505,10.3333333 0,9.89298757 0,9.34036509 L0,8.65963491 Z M0,13.9929682 C0,13.444567 0.444630861,13 1.00087166,13 L14.9991283,13 C15.5518945,13 16,13.4403458 16,13.9929682 L16,14.6736984 C16,15.2220996 15.5553691,15.6666667 14.9991283,15.6666667 L1.00087166,15.6666667 C0.448105505,15.6666667 0,15.2263209 0,14.6736984 L0,13.9929682 Z" id="path-1"></path>
+    </defs>
+    <g id="Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="v1-1-1-mobile-home" transform="translate(-339.000000, -70.000000)">
+            <g id="Direct-/-Icons-/-List-/-M" transform="translate(339.000000, 68.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="icon_list_m" fill="#333333" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
 </svg>
