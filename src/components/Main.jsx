@@ -1,18 +1,15 @@
 // main.js
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
-// import { Event } from './Event.jsx'
+import { Event } from './Event.jsx'
 import { TABS, TABS_KEYS } from '../constants.jsx';
-import dynamic from 'next/dynamic';
-const Event = dynamic(() => import('./Event'), {
-    ssr: false,
-    loading: () => <p>Loading...</p>,
-});
+
 export const Main = () =>  {
     const ref = useRef();
     const initedRef = useRef(false);
     const [activeTab, setActiveTab] = useState('');
     const [hasRightScroll, setHasRightScroll] = useState(false);
+    
 
     useEffect(() => {
         if (!activeTab && !initedRef.current) {
@@ -20,6 +17,16 @@ export const Main = () =>  {
             setActiveTab(new URLSearchParams(window.location.search).get('tab') || 'all');
         }
     }, [activeTab]);
+
+    const onSelectInput = event => {
+        setActiveTab(event.target.value);
+    };
+
+
+    let sizes = [];
+    const onSize = size => {
+        sizes = [...sizes, size];
+    };
 
     useEffect(() => {
         const sumWidth = sizes.reduce((acc, item) => acc + item.width, 0);
@@ -29,10 +36,7 @@ export const Main = () =>  {
         }
     }, [sizes]);
 
-    const onSelectInput = event => {
-        setActiveTab(event.target.value);
-    };
-
+    
     const onArrowCLick = () => {
         const scroller = ref.current.querySelector('.section__panel:not(.section__panel_hidden)');
         if (scroller) {
