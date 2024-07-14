@@ -4,12 +4,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Event } from './Event.jsx'
 import { TABS, TABS_KEYS } from '../constants.jsx';
 
-export const Main = () =>  {
+export const Main = () => {
     const ref = useRef();
     const initedRef = useRef(false);
     const [activeTab, setActiveTab] = useState('');
     const [hasRightScroll, setHasRightScroll] = useState(false);
-    
+
 
     useEffect(() => {
         if (!activeTab && !initedRef.current) {
@@ -36,7 +36,7 @@ export const Main = () =>  {
         }
     }, [sizes]);
 
-    
+
     const onArrowCLick = () => {
         const scroller = ref.current.querySelector('.section__panel:not(.section__panel_hidden)');
         if (scroller) {
@@ -46,6 +46,27 @@ export const Main = () =>  {
             });
         }
     };
+
+    const itemCount = 512; // Общее количество элементов
+    const itemSize = 50; // Высота одного элемента списка (может быть настроена)
+
+    const renderRow = ({ index, style }) => {
+        const key = TABS_KEYS[index % TABS_KEYS.length]; // Циклический выбор вкладок
+        const itemIndex = Math.floor(index / TABS_KEYS.length); // Индекс элемента внутри вкладки
+        const item = TABS[key].items[itemIndex];
+    
+        return (
+            <div style={style}>
+                <Event
+                    key={itemIndex}
+                    {...item}
+                    onSize={onSize}
+                />
+            </div>
+        );
+    };
+
+
 
     return (
         <main className="main">
@@ -185,6 +206,7 @@ export const Main = () =>  {
                             </ul>
                         </div>
                     )}
+                    
                     {hasRightScroll &&
                         <div className="section__arrow" onClick={onArrowCLick}></div>
                     }
